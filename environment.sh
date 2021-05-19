@@ -1,2 +1,2 @@
 #!/bin/bash
-export RTSP_PORT=8555
+export RTSP_PORT=8561
