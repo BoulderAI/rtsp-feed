@@ -1,4 +1,4 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine as cloud-sdk
+FROM alpine
 # FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
