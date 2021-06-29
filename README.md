@@ -7,7 +7,7 @@
 2. Run the rstp-feed container in the background
 
     ```bash
-    ./run-feed.sh BAI_STREAM_02 gs://bai-dev-data/ground-truths/ExactTech/BAI_0000692/2021-02-04/DataAcqVideo_2021-02-04-00-00-04.116.mp4 
+    ./run-feed.sh BAI_STREAM_02 gs://path-to-google-storage-url 
     ```
     or
     ```bash
