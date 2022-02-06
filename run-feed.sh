@@ -14,8 +14,12 @@ if [ -f ${file_path} -o -d ${file_path} ]; then
     volmount="${file_path}:${file_path}"
     echo "Passing volume mount arg ${volmount} into the container"
 fi
+stream_endpoint_additional=""
+if [ -d ${file_path} ]; then
+    stream_endpoint_additional="/filename without .mkv extension"
+fi
 echo "Starting rtsp stream on endpoint ${stream_endpoint} using file(s) at ${file_path} and exporting on RTSP port ${RTSP_PORT}"
-echo "Access with rtsp://$(ip route get 8.8.8.8 | tr -s ' ' | cut -d' ' -f7):${RTSP_PORT}/${stream_endpoint})"
+echo "Access with rtsp://$(ip route get 8.8.8.8 | tr -s ' ' | cut -d' ' -f7):${RTSP_PORT}/${stream_endpoint}${stream_endpoint_additional}"
 cat << EOF > .env
 RTSP_PORT=${RTSP_PORT}
 FILE_PATH=${file_path}

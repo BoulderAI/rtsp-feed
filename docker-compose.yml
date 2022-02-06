@@ -13,6 +13,7 @@ services:
     environment:
       - RTSP_PROTOCOLS=tcp
   stream:
+    container_name: ${STREAM_ENDPOINT}
     image: baicontainers/rtsp-feed
     networks:
       - rtsp-server
